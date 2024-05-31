@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "875427486294",
+    "project_id": "appmyjuice",
+    "storage_bucket": "appmyjuice.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:875427486294:android:4b72d259e7e52468abf9f7",
+        "android_client_info": {
+          "package_name": "com.example.appmyjuice"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMbszarMjN16YIbSRJ8na0vIudUM2wQns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
