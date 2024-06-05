@@ -37,6 +37,28 @@ class FirestoreService {
     }
   }
 
+  Future<List<Map<String, dynamic>>> getUserOrders() async {
+    String? email = FirebaseAuth.instance.currentUser?.email;
+    if (email == null) {
+      return [];
+    }
+
+    QuerySnapshot querySnapshot = await orders.where('email', isEqualTo: email).get();
+
+    List<Map<String, dynamic>> userOrders = querySnapshot.docs.map((doc) {
+      return {
+        'data': doc['data'],
+        'pedido': doc['pedido'],
+        'endereco': doc['endereco'],
+        'email': doc['email'],
+      };
+    }).toList();
+
+    userOrders.sort((a, b) => b['data'].compareTo(a['data']));
+
+    return userOrders;
+  }
+
   Future<List<Juice>> getJuicesFromDatabase() async {
     QuerySnapshot querySnapshot = await juices.get();
     List<Juice> juiceList = [];

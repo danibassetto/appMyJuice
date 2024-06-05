@@ -44,7 +44,7 @@ class _RegisterPageState extends State<RegisterPage> {
         context: context,
         builder: (context) => AlertDialog(
           backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.7),
-          title: Text("As senhas não são iguais!", style: const TextStyle(color: Colors.white)),
+          title: const Text("As senhas não são iguais!", style: TextStyle(color: Colors.white)),
         ),
       );
       return;

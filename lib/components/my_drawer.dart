@@ -1,7 +1,7 @@
 import 'package:appmyjuice/components/my_drawer_tile.dart';
 import 'package:appmyjuice/pages/cart_page.dart';
+import 'package:appmyjuice/pages/order_history.dart';
 import 'package:appmyjuice/services/auth/auth_service.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -26,8 +26,8 @@ class MyDrawer extends StatelessWidget {
             child: ClipOval(
               child: Image.asset(
                 'lib/images/logo/logo.jpg',
-                width: 120,
-                height: 120,
+                width: 150,
+                height: 150,
                 fit: BoxFit.cover,
               ),
             ),
@@ -57,13 +57,18 @@ class MyDrawer extends StatelessWidget {
             },
           ),
 
-          const Spacer(),
-
           MyDrawerTile(
-            text: "${FirebaseAuth.instance.currentUser!.email}",
-            icon: Icons.person,
-            onTap: () {},
+            text: "H I S T Ó R I C O",
+            icon: Icons.receipt,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const OrderHistory()),
+              );
+            },
           ),
+
+          const Spacer(),
 
           MyDrawerTile(
             text: "S A I R",
